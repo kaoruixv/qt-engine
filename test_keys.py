@@ -10,9 +10,7 @@ env_path = os.path.join(current_dir, '.env')
 load_dotenv(dotenv_path=env_path, override=True)
 
 # 3. Securely read the credentials
-API_KEY = os.getenv('ALPACA_API_KEY')
-SECRET_KEY = os.getenv('ALPACA_SECRET_KEY')
-BASE_URL = 'https://paper-api.alpaca.markets'
+from config import API_KEY, SECRET_KEY, BASE_URL
 
 def test_secure_connection():
     print(f"🔍 Forcing dotenv to read vault at: {env_path}")

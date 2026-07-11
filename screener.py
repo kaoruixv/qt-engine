@@ -6,10 +6,7 @@ import itertools
 import os
 
 # Credentials
-API_KEY = 'REDACTED'
-SECRET_KEY = 'REDACTED'
-BASE_URL = 'https://paper-api.alpaca.markets'
-
+from config import API_KEY, SECRET_KEY, BASE_URL
 api = tradeapi.REST(key_id=API_KEY, secret_key=SECRET_KEY, base_url=BASE_URL)
 
 # The Target Basket

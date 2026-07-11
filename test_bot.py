@@ -1,9 +1,7 @@
 import alpaca_trade_api as tradeapi
 
 # 1. Input your exact keys
-API_KEY = 'REDACTED'
-SECRET_KEY = 'REDACTED'
-
+from config import API_KEY, SECRET_KEY, BASE_URL
 # 2. Connect to the market (Forcing the exact URL to prevent the /v2/v2 bug)
 print("Connecting to Alpaca Paper Market...")
 api = tradeapi.REST(

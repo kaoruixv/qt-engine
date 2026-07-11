@@ -13,11 +13,7 @@ ASSET_1 = sys.argv[1].upper()
 ASSET_2 = sys.argv[2].upper()
 
 # 1. Credentials Setup (PASTE YOUR REAL KEYS HERE)
-API_KEY = 'REDACTED'
-SECRET_KEY = 'REDACTED'
-
-BASE_URL = 'https://paper-api.alpaca.markets'
-
+from config import API_KEY, SECRET_KEY, BASE_URL
 api = tradeapi.REST(key_id=API_KEY, secret_key=SECRET_KEY, base_url=BASE_URL)
 
 print(f"Initializing LIVE Z-Score Execution Engine for {ASSET_1} & {ASSET_2}...")

@@ -7,10 +7,7 @@ import sys
 
 # 1. Credentials Setup
 # IMPORTANT: Use your PAPER TRADING keys from the Alpaca Dashboard.
-API_KEY = 'REDACTED'
-SECRET_KEY = 'REDACTED'
-BASE_URL = 'https://paper-api.alpaca.markets'
-
+from config import API_KEY, SECRET_KEY, BASE_URL
 # 2. Connection Verification
 print("Initializing connection...")
 try:
