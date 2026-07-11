@@ -1,10 +1,15 @@
+import os
+from dotenv import load_dotenv
+_dir = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(dotenv_path=os.path.join(_dir, ".env"), override=True)
+API_KEY = os.getenv("ALPACA_API_KEY")
+SECRET_KEY = os.getenv("ALPACA_SECRET_KEY")
+
 import alpaca_trade_api as tradeapi
 import pandas as pd
 from datetime import datetime, timedelta
 
 # 1. Credentials Setup
-API_KEY = 'REDACTED'
-SECRET_KEY = 'REDACTED'
 BASE_URL = 'https://paper-api.alpaca.markets'
 
 api = tradeapi.REST(key_id=API_KEY, secret_key=SECRET_KEY, base_url=BASE_URL)
