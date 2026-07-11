@@ -34,9 +34,9 @@ bars_2 = api.get_bars(ASSET_2, tradeapi.TimeFrame.Day, start=start_date).df
 df = pd.DataFrame({'a1': bars_1['close'], 'a2': bars_2['close']}).dropna()
 
 # 5. Institutional Logic
-model = sm.OLS(df['a1'], df['a2']).fit()
-hedge_ratio = model.params.iloc[0]
-
+X = sm.add_constant(data[ASSET_2])
+model = sm.OLS(data[ASSET_1], X).fit()
+hedge_ratio = model.params.iloc[1]
 # Spread & Z-Score
 df['spread'] = df['a1'] - (hedge_ratio * df['a2'])
 df['mean'] = df['spread'].rolling(window=30).mean()
