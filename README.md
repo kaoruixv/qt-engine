@@ -31,6 +31,25 @@ reported here even though neither supports "the strategy works":
    entirely once transaction costs and the honest (non-overfit)
    expected value were accounted for.
 
+## Interpreting and reusing these results
+
+These findings are specific to the 28 pairs and the historical window
+tested — they are not a permanent verdict on pairs trading as a
+strategy. Markets are non-stationary: cointegration between two stocks
+isn't a fixed law, it can form or break as company fundamentals,
+competitive dynamics, or sector structure change. A different universe
+of pairs, or the same pairs over a different window, could produce a
+different — including a positive — result.
+
+What's reusable here isn't the specific "zero pairs survived" output.
+It's the pipeline: FDR-corrected screening, look-ahead-free walk-forward
+backtesting, and a properly train/test-split optimizer. The point of
+this repo is that whatever it outputs, positive or null, has actually
+been tested rigorously enough to be trusted — not that this particular
+run found something tradeable. Rerunning it on new data is expected
+and encouraged; a different answer next time wouldn't contradict this
+one, it would just reflect a different market snapshot.
+
 ## Other fixes in this pass
 
 - Removed hardcoded Alpaca API keys from 9 files; centralized config via
