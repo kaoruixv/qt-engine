@@ -4,7 +4,7 @@ A statistical arbitrage pairs-trading research pipeline: cointegration screening
 z-score-based signal generation, walk-forward backtesting, and parameter
 optimization — built to surface real findings, including negative ones.
 
-## What this actually found
+## What this actually found (Results in 16/07/2026)
 
 Two honest, verifiable results came out of this project, and both are
 reported here even though neither supports "the strategy works":
